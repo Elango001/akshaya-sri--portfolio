@@ -5,23 +5,21 @@ import { SelectedWorksSection } from "@/components/SelectedWorksSection";
 import { ApproachSection } from "@/components/ApproachSection";
 import { HeuristicsSection } from "@/components/HeuristicsSection";
 import { FaqSection } from "@/components/FaqSection";
-import { ConnectSection } from "@/components/ConnectSection";
-import { MProganoFooter } from "@/components/MProganoFooter";
+import { ConnectFooter } from "@/components/ConnectFooter";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors overflow-x-hidden">
       <MProganoNavbar />
-      <main className="flex-1">
+      <main className="flex-1 w-full">
         <MProganoHero />
         <CapabilitiesSection />
         <SelectedWorksSection />
         <ApproachSection />
         <HeuristicsSection />
         <FaqSection />
-        <ConnectSection />
       </main>
-      <MProganoFooter />
+      <ConnectFooter />
     </div>
   );
 }
