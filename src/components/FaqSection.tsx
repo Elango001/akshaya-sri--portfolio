@@ -31,35 +31,35 @@ export function FaqSection() {
   ];
 
   return (
-    <section id="faqs" className="py-20 md:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
+    <section id="faqs" className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 space-y-3">
+        <div className="mb-6 space-y-1.5">
           <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] block">
             FAQs
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text-primary)]">
+          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
             A few questions people usually ask.
           </h2>
-          <p className="text-base sm:text-xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-2xl leading-relaxed">
             Straight answers about my background, working style, and product thinking.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] overflow-hidden transition-all shadow-xs"
+                className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] overflow-hidden transition-all shadow-xs"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-7 sm:p-8 flex items-center justify-between gap-4 font-semibold text-[var(--text-primary)] text-lg sm:text-xl"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-[var(--text-primary)] text-base sm:text-lg"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[var(--text-muted)] shrink-0 transition-transform duration-200 ${
+                    className={`w-4 h-4 text-[var(--text-muted)] shrink-0 transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -71,10 +71,10 @@ export function FaqSection() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-7 pb-8 sm:px-8 sm:pb-8 text-base text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border-subtle)] pt-5">
+                      <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border-subtle)] pt-4">
                         {faq.a}
                       </div>
                     </motion.div>

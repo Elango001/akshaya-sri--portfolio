@@ -26,53 +26,41 @@ export function ApproachSection() {
   ];
 
   return (
-    <section id="approach" className="py-20 md:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
+    <section id="approach" className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-14 space-y-3">
+        <div className="mb-6 space-y-1.5">
           <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] block">
             Working Together
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text-primary)]">
+          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
             From understanding to delivery.
           </h2>
-          <p className="text-base sm:text-xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-2xl leading-relaxed">
             We agree on the problem, a useful first version, and who owns what along the way.
           </p>
         </div>
 
-        {/* 3 Step Cards with Framer Motion hover */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* 3 Step Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
           {steps.map((s, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ y: -3 }}
+              whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
-              className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 shadow-[var(--card-shadow)] space-y-4 flex flex-col justify-between"
+              className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-7 shadow-[var(--card-shadow)] flex flex-col justify-start gap-2.5 h-full transition-colors"
             >
-              <div className="space-y-3">
-                <span className="font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider">
-                  Step {s.step}
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                  {s.description}
-                </p>
-              </div>
+              <span className="font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider">
+                Step {s.step}
+              </span>
+              <h3 className="text-lg sm:text-xl font-bold text-[var(--text-primary)]">
+                {s.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+                {s.description}
+              </p>
             </motion.div>
           ))}
-        </div>
-
-        {/* Quote Card */}
-        <div className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)]/60 p-8 sm:p-10">
-          <blockquote className="text-base sm:text-lg text-[var(--text-primary)] font-medium italic leading-relaxed">
-            “Loved taking on sticky problems that few others could wrap their head around, and not only sought to address the problem at hand, but build a better system to address the root cause.”
-          </blockquote>
-          <div className="mt-3 text-xs font-mono text-[var(--text-muted)]">
-            – Engineering Department Head & Product Collaborators
-          </div>
         </div>
       </div>
     </section>

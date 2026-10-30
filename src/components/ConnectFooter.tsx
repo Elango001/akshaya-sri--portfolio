@@ -34,30 +34,30 @@ export function ConnectFooter() {
   };
 
   return (
-    <footer id="connect" className="pt-20 pb-16 bg-[var(--bg-base)] border-t border-[var(--border-subtle)] transition-colors">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <footer id="connect" className="pt-10 pb-12 sm:pt-14 sm:pb-14 bg-[var(--bg-base)] border-t border-[var(--border-subtle)] transition-colors">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Minimal Consolidated Contact Card */}
         <motion.div
           whileHover={{ y: -2 }}
           transition={{ duration: 0.2 }}
-          className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-10 lg:p-12 shadow-[var(--card-shadow)]"
+          className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-8 lg:p-9 shadow-[var(--card-shadow)]"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             {/* Left Narrative (7 cols) */}
-            <div className="lg:col-span-7 space-y-4">
+            <div className="lg:col-span-7 space-y-3.5">
               <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] block">
                 Let's Connect 👋
               </span>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-[var(--text-primary)] tracking-tight">
                 You're right... <br className="hidden sm:inline" />
                 we should connect!
               </h2>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed max-w-xl">
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed max-w-xl">
                 Open to product management opportunities and technical collaborations. Whether you want to discuss LocalLens AI, review PRD trade-offs, or explore roles—my inbox is always open.
               </p>
 
               {/* Direct Instant Action Pills */}
-              <div className="pt-2 flex flex-wrap items-center gap-2.5">
+              <div className="pt-1 flex flex-wrap items-center gap-2">
                 <a
                   href={`mailto:${personal.email}`}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[var(--text-primary)] text-[var(--bg-base)] hover:opacity-90 transition-all shadow-xs"
@@ -96,14 +96,14 @@ export function ConnectFooter() {
               </div>
             </div>
 
-            {/* Right Quick Note Box (5 cols) - Minimal & zero overwhelm */}
-            <div className="lg:col-span-5 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)]/50 p-5 sm:p-6 space-y-4">
+            {/* Right Quick Note Box (5 cols) */}
+            <div className="lg:col-span-5 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)]/50 p-5 space-y-3">
               <div className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] font-semibold">
                 Drop a quick note
               </div>
 
               {sent ? (
-                <div className="p-4 rounded-xl bg-[var(--bg-surface)] text-center space-y-1.5">
+                <div className="p-4 rounded-xl bg-[var(--bg-surface)] text-center space-y-1">
                   <div className="text-emerald-500 font-semibold text-xs flex items-center justify-center gap-1">
                     <Check className="w-3.5 h-3.5" /> Opening mail client...
                   </div>
@@ -112,14 +112,14 @@ export function ConnectFooter() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleQuickSend} className="space-y-3">
+                <form onSubmit={handleQuickSend} className="space-y-2.5">
                   <input
                     type="text"
                     required
                     placeholder="Your name or email"
                     value={senderContact}
                     onChange={(e) => setSenderContact(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--border-strong)] transition-colors"
+                    className="w-full px-3.5 py-2 rounded-xl text-xs border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--border-strong)] transition-colors"
                   />
                   <textarea
                     rows={2}
@@ -127,7 +127,7 @@ export function ConnectFooter() {
                     placeholder="Quick note or opportunity..."
                     value={quickNote}
                     onChange={(e) => setQuickNote(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl text-xs sm:text-sm border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--border-strong)] transition-colors resize-none"
+                    className="w-full px-3.5 py-2 rounded-xl text-xs border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--border-strong)] transition-colors resize-none"
                   />
                   <button
                     type="submit"
@@ -143,7 +143,7 @@ export function ConnectFooter() {
         </motion.div>
 
         {/* Quiet Minimal Footer Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[var(--text-muted)] pt-6 border-t border-[var(--border-subtle)]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-[var(--text-muted)] pt-5 border-t border-[var(--border-subtle)]">
           <div className="flex items-center gap-2">
             <span>© All Rights Reserved.</span>
             <span>•</span>
@@ -152,7 +152,7 @@ export function ConnectFooter() {
             <span className="hidden sm:inline">Salem, India</span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <span>Product Manager • AI Systems</span>
             <button
               onClick={scrollToTop}

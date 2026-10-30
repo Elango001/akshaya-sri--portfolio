@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
 import { 
   FileText, 
   Moon, 
   Sun, 
-  Menu,
+  Menu, 
   X 
 } from "lucide-react";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";

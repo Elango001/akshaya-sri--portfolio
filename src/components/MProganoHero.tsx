@@ -13,42 +13,42 @@ export function MProganoHero() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.05,
+        staggerChildren: 0.08,
+        delayChildren: 0.04,
       },
     },
   };
 
   const item: Variants = {
-    hidden: { opacity: 0, y: 14 },
+    hidden: { opacity: 0, y: 12 },
     show: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.45, ease: "easeOut" }
     },
   };
 
   return (
-    <section id="home" className="pt-12 pb-16 sm:pt-20 sm:pb-24 border-b border-[var(--border-subtle)] framer-dot-grid">
+    <section id="home" className="pt-8 pb-10 sm:pt-12 sm:pb-14 border-b border-[var(--border-subtle)] bg-[var(--bg-base)] framer-dot-grid relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="space-y-8 sm:space-y-10"
+          className="space-y-6 sm:space-y-7"
         >
           {/* Top descriptor */}
           <motion.div variants={item} className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <p className="text-xs sm:text-sm font-medium text-[var(--text-muted)] tracking-wide">
               AI Systems & Product Management • Salem, India
             </p>
           </motion.div>
 
-          {/* Headline (Responsive font sizes preventing any horizontal overflow) */}
+          {/* Headline in original clean aesthetic */}
           <motion.h1
             variants={item}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-semibold tracking-tight text-[var(--text-secondary)] leading-[1.12] max-w-5xl break-words"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-semibold tracking-tight text-[var(--text-secondary)] leading-[1.12] max-w-5xl break-words"
           >
             I shape{" "}
             <span className="text-[var(--text-primary)] font-bold">
@@ -61,18 +61,18 @@ export function MProganoHero() {
             people actually use.
           </motion.h1>
 
-          {/* Action Pills: Clean, minimal (Go on button removed) */}
-          <motion.div variants={item} className="flex flex-wrap items-center gap-3 pt-1">
+          {/* Action Pills */}
+          <motion.div variants={item} className="flex flex-wrap items-center gap-3">
             <a
               href="#connect"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[var(--text-primary)] text-[var(--bg-base)] hover:opacity-90 transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[var(--text-primary)] text-[var(--bg-base)] hover:opacity-90 transition-opacity"
             >
               Ways to Connect
             </a>
             <a
               href="/Akshaya_Sri_B_Resume.pdf"
               download
-              className="inline-flex items-center justify-center gap-1.5 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-medium border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)] transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)] transition-colors"
             >
               Resume (PDF)
               <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
@@ -82,23 +82,23 @@ export function MProganoHero() {
           {/* Personal Intro Card */}
           <motion.div
             variants={item}
-            className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-10 lg:p-12 shadow-[var(--card-shadow)] space-y-8"
+            className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-8 lg:p-9 shadow-[var(--card-shadow)] space-y-6"
           >
-            <div className="space-y-3 max-w-3xl">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text-primary)]">
+            <div className="space-y-2.5 max-w-3xl">
+              <h2 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
                 Hello 👋 I’m {personal.name}.
               </h2>
-              <p className="text-sm sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-[var(--text-secondary)] leading-relaxed">
                 I help when your team needs a tool that doesn’t exist yet, or the software you rely on no longer fits the work.
               </p>
-              <p className="text-xs sm:text-base text-[var(--text-muted)] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                 I work out what would help, then design and build the software with the people using it—whether it’s multimodal discovery for everyday users or operational automation for enterprise workflows.
               </p>
             </div>
 
             {/* 3 Pillar Traits */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-6 sm:pt-8 border-t border-[var(--border-subtle)]">
-              <div className="space-y-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 pt-5 sm:pt-6 border-t border-[var(--border-subtle)]">
+              <div className="space-y-1.5">
                 <h3 className="text-sm sm:text-base font-bold text-[var(--text-primary)]">
                   Product Builder
                 </h3>
@@ -107,7 +107,7 @@ export function MProganoHero() {
                 </p>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <h3 className="text-sm sm:text-base font-bold text-[var(--text-primary)]">
                   Technical Translator
                 </h3>
@@ -116,7 +116,7 @@ export function MProganoHero() {
                 </p>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <h3 className="text-sm sm:text-base font-bold text-[var(--text-primary)]">
                   Detail-Oriented
                 </h3>
@@ -124,19 +124,6 @@ export function MProganoHero() {
                   I make interfaces clear to use, with the exact source attribution and recovery paths people need.
                 </p>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Quote Card */}
-          <motion.div
-            variants={item}
-            className="rounded-2xl sm:rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)]/60 p-6 sm:p-8"
-          >
-            <blockquote className="text-sm sm:text-base md:text-lg text-[var(--text-primary)] font-medium italic leading-relaxed">
-              “Consistently demonstrated exceptional technical prowess and an innate ability to find ingenious solutions to complex problems.”
-            </blockquote>
-            <div className="mt-3 text-xs font-mono text-[var(--text-muted)]">
-              – Smart India Hackathon Evaluation Jury & Academic Mentors
             </div>
           </motion.div>
         </motion.div>

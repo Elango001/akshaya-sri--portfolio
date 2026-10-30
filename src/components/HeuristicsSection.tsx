@@ -32,32 +32,33 @@ export function HeuristicsSection() {
   ];
 
   return (
-    <section className="py-20 md:py-28 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
+    <section className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 space-y-3">
+        <div className="mb-6 space-y-1.5">
           <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] block">
             Heuristics
           </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[var(--text-primary)]">
+          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[var(--text-primary)]">
             How I think about software.
           </h2>
-          <p className="text-base sm:text-xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-2xl leading-relaxed">
             A few practical guidelines that keep interfaces and product decisions grounded in reality.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 6 Cards with uniform top alignment and consistent baselines */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
           {heuristics.map((h, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -3 }}
+              whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
-              className="p-7 rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] shadow-xs space-y-3 flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-strong)] shadow-xs flex flex-col justify-start gap-2.5 h-full transition-colors"
             >
-              <div className="font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider">
+              <div className="font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">
                 0{i + 1} • {h.title}
               </div>
-              <p className="text-sm sm:text-base text-[var(--text-primary)] leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm text-[var(--text-primary)] leading-relaxed font-medium">
                 {h.text}
               </p>
             </motion.div>
