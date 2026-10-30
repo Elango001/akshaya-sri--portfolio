@@ -11,7 +11,7 @@ export function PrinciplesSection() {
       icon: Target,
       principle: "Start with the user's bottleneck, never the model's demo.",
       description:
-        "Generative AI tempts teams to ship features simply because the API exists. Real adoption happens when you solve an acute, repetitive human friction point. In SONA Scheduler, identifying at-risk students wasn't the hard part—eliminating the calendar scheduling overhead was.",
+        "Generative AI tempts teams to ship features simply because the API exists. Real adoption happens when you solve an acute, repetitive human friction point. In SONA Scheduler, identifying at-risk students wasn't the hard part, eliminating the calendar scheduling overhead was.",
     },
     {
       title: "Attribution Over Hallucination",

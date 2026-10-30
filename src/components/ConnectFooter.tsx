@@ -34,13 +34,13 @@ export function ConnectFooter() {
   };
 
   return (
-    <footer id="connect" className="pt-10 pb-12 sm:pt-14 sm:pb-14 bg-[var(--bg-base)] border-t border-[var(--border-subtle)] transition-colors">
+    <footer id="connect" className="pt-10 pb-12 sm:pt-14 sm:pb-14 bg-transparent border-t border-[var(--border-subtle)] transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Minimal Consolidated Contact Card */}
+        {/* Minimal Consolidated Contact Card in Ultra-Sheer Glass (No White Box) */}
         <motion.div
           whileHover={{ y: -2 }}
           transition={{ duration: 0.2 }}
-          className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-8 lg:p-9 shadow-[var(--card-shadow)]"
+          className="rounded-3xl sheer-glass p-6 sm:p-8 lg:p-9 hover:border-white/25 transition-all"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             {/* Left Narrative (7 cols) */}
@@ -52,8 +52,8 @@ export function ConnectFooter() {
                 You're right... <br className="hidden sm:inline" />
                 we should connect!
               </h2>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed max-w-xl">
-                Open to product management opportunities and technical collaborations. Whether you want to discuss LocalLens AI, review PRD trade-offs, or explore roles—my inbox is always open.
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed max-w-xl font-normal">
+                Open to product management opportunities and technical collaborations. Whether you want to discuss LocalLens AI, review PRD tradeoffs, or explore roles, my inbox is always open.
               </p>
 
               {/* Direct Instant Action Pills */}
@@ -68,7 +68,7 @@ export function ConnectFooter() {
 
                 <button
                   onClick={copyEmail}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-mono border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-mono sheer-glass text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/10 transition-colors"
                 >
                   {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5 text-[var(--text-muted)]" />}
                   {copied ? "Copied!" : personal.email}
@@ -78,7 +78,7 @@ export function ConnectFooter() {
                   href="https://www.linkedin.com/in/akshaya-sri-balan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium sheer-glass text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/10 transition-colors"
                 >
                   <LinkedInIcon className="w-3.5 h-3.5" />
                   LinkedIn
@@ -88,7 +88,7 @@ export function ConnectFooter() {
                 <a
                   href="/Akshaya_Sri_B_Resume.pdf"
                   download
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium sheer-glass text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/10 transition-colors"
                 >
                   <FileText className="w-3.5 h-3.5" />
                   Resume (PDF)
@@ -96,14 +96,14 @@ export function ConnectFooter() {
               </div>
             </div>
 
-            {/* Right Quick Note Box (5 cols) */}
-            <div className="lg:col-span-5 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)]/50 p-5 space-y-3">
+            {/* Right Quick Note Box (5 cols) in Sheer Glass Inset */}
+            <div className="lg:col-span-5 rounded-2xl sheer-glass-inset p-5 space-y-3">
               <div className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] font-semibold">
                 Drop a quick note
               </div>
 
               {sent ? (
-                <div className="p-4 rounded-xl bg-[var(--bg-surface)] text-center space-y-1">
+                <div className="p-4 rounded-xl sheer-glass text-center space-y-1">
                   <div className="text-emerald-500 font-semibold text-xs flex items-center justify-center gap-1">
                     <Check className="w-3.5 h-3.5" /> Opening mail client...
                   </div>
@@ -119,7 +119,7 @@ export function ConnectFooter() {
                     placeholder="Your name or email"
                     value={senderContact}
                     onChange={(e) => setSenderContact(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl text-xs border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--border-strong)] transition-colors"
+                    className="w-full px-3.5 py-2 rounded-xl text-xs sheer-glass text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-white/30 transition-colors"
                   />
                   <textarea
                     rows={2}
@@ -127,7 +127,7 @@ export function ConnectFooter() {
                     placeholder="Quick note or opportunity..."
                     value={quickNote}
                     onChange={(e) => setQuickNote(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl text-xs border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--border-strong)] transition-colors resize-none"
+                    className="w-full px-3.5 py-2 rounded-xl text-xs sheer-glass text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-white/30 transition-colors resize-none"
                   />
                   <button
                     type="submit"
@@ -156,7 +156,7 @@ export function ConnectFooter() {
             <span>Product Manager • AI Systems</span>
             <button
               onClick={scrollToTop}
-              className="p-1.5 rounded-full border border-[var(--border-subtle)] hover:border-[var(--border-strong)] text-[var(--text-primary)] transition-colors"
+              className="p-1.5 rounded-full sheer-glass hover:border-white/30 text-[var(--text-primary)] transition-colors"
               aria-label="Back to top"
             >
               <ArrowUp className="w-3.5 h-3.5" />

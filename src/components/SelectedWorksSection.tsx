@@ -12,7 +12,7 @@ export function SelectedWorksSection() {
   const current = caseStudies[activeProject];
 
   return (
-    <section id="works" className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
+    <section id="works" className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-5 space-y-1.5">
@@ -27,7 +27,7 @@ export function SelectedWorksSection() {
           </p>
         </div>
 
-        {/* Project Selector Pills with Animated Sliding Pill */}
+        {/* Project Selector Pills with Animated Sliding Pill on Sheer Glass */}
         <div className="flex overflow-x-auto pb-2 gap-2 mb-6 no-scrollbar">
           {caseStudies.map((item, idx) => {
             const isSelected = activeProject === idx;
@@ -38,13 +38,13 @@ export function SelectedWorksSection() {
                 className={`relative px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors ${
                   isSelected
                     ? "text-[var(--text-primary)] font-bold"
-                    : "text-[var(--text-muted)] hover:text-[var(--text-primary)] border border-[var(--border-subtle)] bg-[var(--bg-surface)]"
+                    : "text-[var(--text-muted)] hover:text-[var(--text-primary)] sheer-glass hover:bg-white/10"
                 }`}
               >
                 {isSelected && (
                   <motion.span
                     layoutId="active-work-pill"
-                    className="absolute inset-0 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--border-strong)] -z-10 shadow-xs"
+                    className="absolute inset-0 rounded-full bg-white/30 dark:bg-white/[0.08] border border-[var(--border-strong)] -z-10 shadow-xs"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -54,7 +54,7 @@ export function SelectedWorksSection() {
           })}
         </div>
 
-        {/* Expansive Case Study Card with Tightened Internal Spacing */}
+        {/* Expansive Ultra-Sheer Glass Case Study Card (No White Box) */}
         <AnimatePresence mode="wait">
           <motion.div
             key={current.id}
@@ -62,7 +62,7 @@ export function SelectedWorksSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-8 lg:p-9 shadow-[var(--card-shadow)] space-y-6"
+            className="rounded-3xl sheer-glass p-6 sm:p-8 lg:p-9 space-y-6 hover:border-white/25 transition-all"
           >
             {/* Title & Domain Meta */}
             <div className="space-y-2 pb-5 border-b border-[var(--border-subtle)]">
@@ -70,7 +70,7 @@ export function SelectedWorksSection() {
                 <span className="text-xs font-mono text-[var(--text-muted)] uppercase tracking-wider">
                   {current.domain} • {current.timeline}
                 </span>
-                <span className="text-xs font-mono px-3 py-1 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)] text-[var(--text-primary)] font-semibold">
+                <span className="text-xs font-mono px-3 py-1 rounded-full sheer-glass-inset text-[var(--text-primary)] font-semibold">
                   {current.heroMetric.value} {current.heroMetric.label}
                 </span>
               </div>
@@ -87,27 +87,27 @@ export function SelectedWorksSection() {
               {/* Left Column: Context & What was needed */}
               <div className="space-y-5">
                 {/* 1. Context */}
-                <div className="space-y-1">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] font-semibold">
+                <div className="space-y-1.5">
+                  <h4 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[var(--text-muted)] font-bold">
                     Context
                   </h4>
-                  <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[var(--text-secondary)] font-normal leading-relaxed">
                     {current.problemStatement.overview}
                   </p>
                 </div>
 
                 {/* 2. What was needed */}
-                <div className="space-y-1">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] font-semibold">
+                <div className="space-y-1.5">
+                  <h4 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[var(--text-muted)] font-bold">
                     What was needed
                   </h4>
-                  <p className="text-xs sm:text-sm text-[var(--text-primary)] font-medium leading-relaxed">
+                  <p className="text-sm sm:text-base text-[var(--text-primary)] font-semibold leading-relaxed">
                     {current.userResearch.coreInsight}
                   </p>
-                  <ul className="space-y-1 text-xs text-[var(--text-muted)] pt-1">
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-[var(--text-secondary)] font-medium pt-1">
                     {current.problemStatement.keyFrictions.map((f, i) => (
                       <li key={i} className="flex items-start gap-1.5">
-                        <span className="text-[var(--text-primary)]">•</span>
+                        <span className="text-[var(--text-primary)] font-bold">•</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -118,18 +118,18 @@ export function SelectedWorksSection() {
               {/* Right Column: Work I did & What Changed */}
               <div className="space-y-5">
                 {/* 3. Work I did */}
-                <div className="space-y-1">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] font-semibold">
+                <div className="space-y-1.5">
+                  <h4 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[var(--text-muted)] font-bold">
                     Work I did
                   </h4>
-                  <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[var(--text-secondary)] font-normal leading-relaxed">
                     {current.solutionStrategy.approach}
                   </p>
-                  <div className="pt-1.5 flex flex-wrap gap-1.5">
+                  <div className="pt-2 flex flex-wrap gap-1.5">
                     {current.productArtifacts.techStack.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2.5 py-0.5 rounded text-xs font-mono border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)] text-[var(--text-secondary)]"
+                        className="px-3 py-1 rounded-md text-xs sm:text-sm font-mono font-medium sheer-glass-inset text-[var(--text-primary)]"
                       >
                         {tech}
                       </span>
@@ -137,21 +137,21 @@ export function SelectedWorksSection() {
                   </div>
                 </div>
 
-                {/* 4. What Changed */}
-                <div className="space-y-1">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
+                {/* 4. What Changed (Sheer Glass Inset) */}
+                <div className="space-y-1.5">
+                  <h4 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-bold">
                     What Changed
                   </h4>
-                  <div className="p-4 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface-elevated)]/60 space-y-2">
-                    <ul className="space-y-1.5 text-xs text-[var(--text-primary)] font-medium">
+                  <div className="p-4 sm:p-5 rounded-2xl sheer-glass-inset space-y-2.5">
+                    <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-primary)] font-semibold">
                       {current.outcomes.quantitative.map((out, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                           <span>{out}</span>
                         </li>
                       ))}
                     </ul>
-                    <p className="text-xs text-[var(--text-muted)] pt-1.5 border-t border-[var(--border-subtle)] italic">
+                    <p className="text-xs sm:text-sm text-[var(--text-muted)] pt-2 border-t border-[var(--border-subtle)] italic font-medium">
                       "{current.retrospective.whatWorked}"
                     </p>
                   </div>

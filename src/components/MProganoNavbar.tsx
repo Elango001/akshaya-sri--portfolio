@@ -37,7 +37,7 @@ export function MProganoNavbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg-base)]/85 border-b border-[var(--border-subtle)] transition-colors">
+    <header className="sticky top-0 z-50 backdrop-blur-2xl bg-white/15 dark:bg-black/25 border-b border-[var(--border-subtle)] transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand */}
@@ -51,8 +51,8 @@ export function MProganoNavbar() {
             </span>
           </a>
 
-          {/* Center Links with Sliding Pill Animation */}
-          <nav className="hidden md:flex items-center p-1 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)]/80 shadow-xs">
+          {/* Center Links with Sliding Pill Animation on Sheer Glass */}
+          <nav className="hidden md:flex items-center p-1 rounded-full sheer-glass">
             {navLinks.map((link) => {
               const isActive = activeNav === link.name;
               return (
@@ -69,7 +69,7 @@ export function MProganoNavbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-sliding-pill"
-                      className="absolute inset-0 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--border-strong)] -z-10"
+                      className="absolute inset-0 rounded-full bg-white/30 dark:bg-white/[0.08] border border-[var(--border-strong)] -z-10 shadow-xs"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -81,12 +81,12 @@ export function MProganoNavbar() {
 
           {/* Right Action Buttons */}
           <div className="hidden md:flex items-center gap-2.5">
-            {/* Theme Toggle with smooth rotate animation */}
+            {/* Theme Toggle */}
             <motion.button
               whileTap={{ scale: 0.92 }}
               onClick={toggleTheme}
               aria-label="Toggle dark/light theme"
-              className="p-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-xs"
+              className="p-2 rounded-full sheer-glass hover:bg-white/20 dark:hover:bg-white/10 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {theme === "dark" ? (
@@ -118,7 +118,7 @@ export function MProganoNavbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors shadow-xs"
+              className="p-2 rounded-full sheer-glass hover:bg-white/20 dark:hover:bg-white/10 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
               <LinkedInIcon className="w-4 h-4" />
             </a>
@@ -126,7 +126,7 @@ export function MProganoNavbar() {
             <a
               href="/Akshaya_Sri_B_Resume.pdf"
               download
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)] transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold sheer-glass text-[var(--text-primary)] hover:bg-white/20 dark:hover:bg-white/10 transition-colors"
             >
               <FileText className="w-3.5 h-3.5 text-[var(--text-muted)]" />
               Resume
@@ -146,13 +146,13 @@ export function MProganoNavbar() {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)]"
+              className="p-2 rounded-full sheer-glass text-[var(--text-secondary)]"
             >
               {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-500" />}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)]"
+              className="p-2 rounded-lg sheer-glass text-[var(--text-secondary)]"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -166,14 +166,14 @@ export function MProganoNavbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden py-4 border-t border-[var(--border-subtle)] space-y-2 overflow-hidden"
+              className="md:hidden py-4 border-t border-[var(--border-subtle)] space-y-2 overflow-hidden sheer-glass rounded-2xl my-2 px-3"
             >
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.name, link.href)}
-                  className="block px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)] rounded-lg"
+                  className="block px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/10 rounded-lg"
                 >
                   {link.name}
                 </a>
@@ -182,7 +182,7 @@ export function MProganoNavbar() {
                 <a
                   href="/Akshaya_Sri_B_Resume.pdf"
                   download
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full text-xs font-semibold border border-[var(--border-strong)] bg-[var(--bg-surface)] text-[var(--text-primary)]"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full text-xs font-semibold sheer-glass text-[var(--text-primary)]"
                 >
                   <FileText className="w-4 h-4" /> Resume (PDF)
                 </a>

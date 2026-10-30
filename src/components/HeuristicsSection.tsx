@@ -19,7 +19,7 @@ export function HeuristicsSection() {
     },
     {
       title: "Low Barrier to Start",
-      text: "Make the essential work easy to start. Avoid multi-step forms when a single focused input suffices.",
+      text: "Make the essential work easy to start. Avoid multistep forms when a single focused input suffices.",
     },
     {
       title: "Defensive Recovery",
@@ -32,7 +32,7 @@ export function HeuristicsSection() {
   ];
 
   return (
-    <section className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
+    <section className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6 space-y-1.5">
           <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)] block">
@@ -46,19 +46,19 @@ export function HeuristicsSection() {
           </p>
         </div>
 
-        {/* 6 Cards with uniform top alignment and consistent baselines */}
+        {/* 6 Ultra-Sheer Glass Cards with Top Alignment & Floating Text */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
           {heuristics.map((h, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
-              className="p-5 sm:p-6 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-strong)] shadow-xs flex flex-col justify-start gap-2.5 h-full transition-colors"
+              className="p-5 sm:p-6 rounded-2xl sheer-glass hover:border-white/25 flex flex-col justify-start gap-2.5 h-full transition-all"
             >
-              <div className="font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold">
+              <div className="font-mono text-xs sm:text-sm text-[var(--text-muted)] uppercase tracking-wider font-bold">
                 0{i + 1} • {h.title}
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-primary)] leading-relaxed font-medium">
+              <p className="text-sm sm:text-base text-[var(--text-primary)] leading-relaxed font-semibold">
                 {h.text}
               </p>
             </motion.div>

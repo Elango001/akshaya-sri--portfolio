@@ -532,7 +532,7 @@ export const PORTFOLIO_DATA = {
       userResearch: {
         targetUsers: "Online fashion shoppers, particularly Gen Z and young professionals buying fast fashion.",
         coreInsight:
-          "Consumers don't want a 3D avatar; they just want a simple, authoritative answer: 'Buy Size M — this fits slightly snug around the shoulders.'",
+          "Consumers don't want a 3D avatar; they just want a simple, authoritative answer: 'Buy Size M: this fits slightly snug around the shoulders.'",
         personaSummary: "Ananya (23): Frequently buys clothes online; frustrated by having to return 2 out of 3 shirts.",
       },
       solutionStrategy: {

@@ -15,18 +15,18 @@ export function ApproachSection() {
       step: "02",
       title: "Choose a useful first version",
       description:
-        "I turn that understanding into a direction we can test: a flow, a PRD, or a working prototype. We make the trade-offs understandable and choose enough scope to learn without trying to build everything at once.",
+        "I turn that understanding into a direction we can test: a flow, a PRD, or a working prototype. We make the tradeoffs understandable and choose enough scope to learn without trying to build everything at once.",
     },
     {
       step: "03",
       title: "Build and learn",
       description:
-        "I build hands-on or collaborate with engineering teams through delivery. We test with real users, refine what matters, and ensure the resulting system is maintainable and resilient.",
+        "I build hands on or collaborate with engineering teams through delivery. We test with real users, refine what matters, and ensure the resulting system is maintainable and resilient.",
     },
   ];
 
   return (
-    <section id="approach" className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-[var(--bg-base)]">
+    <section id="approach" className="py-10 md:py-14 border-b border-[var(--border-subtle)] bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-6 space-y-1.5">
@@ -41,22 +41,22 @@ export function ApproachSection() {
           </p>
         </div>
 
-        {/* 3 Step Cards */}
+        {/* 3 Step Cards in Ultra-Sheer Glass (No White Boxes) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
           {steps.map((s, idx) => (
             <motion.div
               key={idx}
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
-              className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-7 shadow-[var(--card-shadow)] flex flex-col justify-start gap-2.5 h-full transition-colors"
+              className="rounded-3xl sheer-glass p-6 sm:p-7 flex flex-col justify-start gap-2.5 h-full hover:border-white/25 transition-all"
             >
-              <span className="font-mono text-xs text-[var(--text-muted)] uppercase tracking-wider">
+              <span className="font-mono text-xs sm:text-sm text-[var(--text-muted)] uppercase tracking-wider font-bold">
                 Step {s.step}
               </span>
               <h3 className="text-lg sm:text-xl font-bold text-[var(--text-primary)]">
                 {s.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] font-normal leading-relaxed">
                 {s.description}
               </p>
             </motion.div>

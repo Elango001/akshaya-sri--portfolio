@@ -9,9 +9,9 @@ import { ConnectFooter } from "@/components/ConnectFooter";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-base)] text-[var(--text-primary)] transition-colors overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-transparent text-[var(--text-primary)] transition-colors overflow-x-hidden">
       <MProganoNavbar />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full bg-transparent">
         <MProganoHero />
         <CapabilitiesSection />
         <SelectedWorksSection />

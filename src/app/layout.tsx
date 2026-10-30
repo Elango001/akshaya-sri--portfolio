@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Akshaya Sri B — Product Manager & AI Engineer",
+  title: "Akshaya Sri B | Product Manager & AI Engineer",
   description:
-    "Product portfolio of Akshaya Sri B: AI & Data Science background with shipped product experience across multimodal discovery (LocalLens AI), academic workflow optimization (-40% time), and manufacturing operations.",
+    "Product portfolio of Akshaya Sri B: AI & Data Science background with shipped product experience across multimodal discovery (LocalLens AI), academic workflow optimization (40% time savings), and manufacturing operations.",
   keywords: [
     "Akshaya Sri B",
     "Product Manager",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Akshaya Sri B" }],
   openGraph: {
-    title: "Akshaya Sri B — Product Manager & AI Engineer",
+    title: "Akshaya Sri B | Product Manager & AI Engineer",
     description:
       "Turning complex AI systems into intuitive products that people use. Case studies, interactive PRDs, and delivery metrics.",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akshaya Sri B — Product Manager & AI Engineer",
+    title: "Akshaya Sri B | Product Manager & AI Engineer",
     description:
       "Turning complex AI systems into intuitive products that people use. Case studies, interactive PRDs, and delivery metrics.",
   },
